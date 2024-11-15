@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Portfolio</div>
+        <ul class="nav-links">
+            <li><a href="#home" style="--i:4;">Home</a></li>
+            <li><a href="#about" style="--i:3;">About</a></li>
+            <li><a href="#projects" style="--i:2;">Projects</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 style="animation: slideRight .5s ease forwards;">Hi, I'm <span class="highlight">Rafhael Malabanan</span></h1>
+                <p>Web Developer | Designer | Creative Thinker</p>
+                <br>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <a href="mailto:rafhaelmalabanan1@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                    <div class="contact-item">
+                        <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <div class="contact-item">
+                        <a href="https://github.com/your-github-profile" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                      <div class="contact-item"></div>
+                        <a href="https://tinyurl.com/RafhaelMalabananResume" target="_blank" class="cta-button" style="background-color: white;color: #fca59e; font-weight: bold; ">View My CV</a>
+                    </div>
+            </div>
+            <div class="hero-image">
+                <img src="./images/rafhael.jpg" alt="Your Photo">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about hidden">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <img src="your-photo.jpg" alt="Your Photo" class="profile-img">
+            <div class="about-text">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quaerat, quibusdam cumque facilis quisquam dolore voluptatem architecto expedita quo? Asperiores nihil nulla cumque magnam perferendis maiores iure ex reiciendis dicta?</p>
+                <div class="skills">
+                    <h3>Skills</h3>
+                    <ul>
+                        <li>HTML5 & CSS3</li>
+                        <li>JavaScript</li>
+                        <li>React</li>
+                        <li>Node.js</li>
+                        <!-- Add more skills -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects hidden">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="row">
+                <div class="col-md-3">
+                    <a href="https://github.com/VurnKambal/AngeliteForecast/tree/master" target="_blank" class="project-card">
+                        <img src="images/image.png" alt="Project 1">
+                        <h3>Angelite Forecast</h3>
+                        <p>Project description goes here.</p>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="https://github.com/your-repo-2" target="_blank" class="project-card">
+                        <img src="project2.jpg" alt="Project 2">
+                        <h3>Project Title</h3>
+                        <p>Project description goes here.</p>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="https://github.com/raffff14/Opsysfun" target="_blank" class="project-card">
+                        <img src="images/opsysfun.png" alt="Project 3">
+                        <h3>Project Title</h3>
+                        <p>Project description goes here.</p>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="https://github.com/your-repo-4" target="_blank" class="project-card">
+                        <img src="project4.jpg" alt="Project 4">
+                        <h3>Project Title</h3>
+                        <p>Project description goes here.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    entry.target.classList.remove('hide');
+                } else {
+                    entry.target.classList.remove('show');
+                    entry.target.classList.add('hide');
+                }
+            });
+        }, {
+            // Adding threshold to make the animation smoother
+            threshold: 0.2
+        });
+
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el));
+    </script>
+</body>
+</html> 
